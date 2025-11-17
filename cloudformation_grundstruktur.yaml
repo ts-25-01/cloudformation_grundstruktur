@@ -1,0 +1,36 @@
+# Angabe der Template-Version
+AWSTemplateFormatVersion: '2010-09-09'
+# Beschreibung, was das Cloudformation Template bauen soll
+Description: 'Das ist die Darstellung der Grundstruktur eines Cloudformation Templates'
+
+# Parameters: Eingabewerte, die optional sind
+# Was soll konfigurierbar sein?
+Parameters:
+  # optionale Eingabewerte
+
+# Resources: PFLICHT! 
+# Was soll erstellt werden?
+Resources:
+  # EC2-Instanz
+  MyEC2Instance:
+    Type: AWS::EC2::Instance
+    Properties:
+      ImageId: ami-089a7a2a13629ecc4 
+      InstanceType: t3.micro
+      Tags:
+        - Key: Name
+          Value: MeineErsteInstanz
+  # VPC
+  # SG
+  # Subnets 
+  # ...
+
+# Outputs: Ausgabewerte (Optional)
+# Was soll nach Ausführen des Templates zurückgegeben werden?
+Outputs:
+
+# Weitere Sachen
+# Mappings: Key-Value MAps (Optional)
+# Conditions: If-then-Logik (optional)
+# Metadata: Zusätzliche Infos (optional)
+
