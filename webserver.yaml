@@ -1,6 +1,6 @@
 AWSTemplateFormatVersion: '2010-09-09'
 
-Description: '"Minimaler Webserver: VPC, Subnet, SG, EC2 +AWSTemplateFormatVersion'
+Description: "Minimaler Webserver: VPC, Subnet, SG, EC2 +AWSTemplateFormatVersion"
 
 Resources:
   #VPC
@@ -38,7 +38,7 @@ Resources:
     DependsOn: AttachGateway
     Properties:
       RouteTableId: !Ref RouteTable
-      DestinationCidrBlock: 0.0.0.0./0
+      DestinationCidrBlock: 0.0.0.0/0
       GatewayId: !Ref InternetGateway
 
   RouteAssoc:
@@ -57,11 +57,11 @@ Resources:
       - IpProtocol: tcp
         FromPort: 22
         ToPort: 22
-        CidrIp: 0.0.0.0./0
+        CidrIp: 0.0.0.0/0
       - IpProtocol: tcp
         FromPort: 80
         ToPort: 80
-        CidrIp: 0.0.0.0./0
+        CidrIp: 0.0.0.0/0
   # EC2-Instanz
   MyEC2Instance:
     Type: AWS::EC2::Instance
@@ -69,7 +69,7 @@ Resources:
       ImageId: ami-089a7a2a13629ecc4
       InstanceType: t3.micro
       SubnetId: !Ref PublicSubnet
-      GroupSet:
+      SecurityGroupIds:
       - !Ref MyWebSG
       UserData:
         Fn::Base64: |
