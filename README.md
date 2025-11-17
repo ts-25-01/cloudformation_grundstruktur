@@ -1,5 +1,10 @@
 ## Anleitung zum Nachbauen des Webserver-Beispiels
 
+## Anmelden an der AWS CLI
+```bash
+aws sso login
+```
+
 ## Template anlegen
 - webserver.yaml ist angelegt
 - das ist alles drin, was wir brauchen
